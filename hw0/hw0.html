@@ -64,18 +64,18 @@ function init() {
   train =new THREE.Group();
   let trainbody = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 30), new THREE.MeshNormalMaterial());
   let chimney = new THREE.Mesh(new THREE.CylinderGeometry(4,4,20,12),new THREE.MeshNormalMaterial());
-  chimney.position.y=5;
+  chimney.position.y=4;
   chimney.position.z=-10;
   train.add(trainbody,chimney);
-  train.position.set(50,5,-25);
+  train.position.set(100,5,-60);
   scene.add(train);
   ////////////////////////////////////////////////////////////////
-  var gridXZ = new THREE.GridHelper(200, 20, 'red', 'white');
+  var gridXZ = new THREE.GridHelper(400, 20, 'red', 'white');
   scene.add(gridXZ);
 }
 
 function animate() {
-  var radius = 25,
+  var radius = 50,
     dis = -1;
 
   //train.position.set(radius * Math.cos(angle), 5, -radius * Math.sin(angle));
@@ -84,7 +84,7 @@ function animate() {
   //var dt = clock.getDelta();
   //if (turn) angle += 2 * 0.10472 * dt;
   if (time <= 97 && turn == true) {
-    var x = train.position.x + (0.5 * dis);
+    var x = train.position.x + (3.07693*2/3* dis);
     train.rotation.y = angle = 1.57079;
     train.position.set(x, 5, -50);
     time++;
@@ -95,9 +95,9 @@ function animate() {
     angle += 0.031415926*4/3;
     time++;
   } else if (time <= 270 && time > 173 && turn == true) {
-    var x = train.position.x - (0.5 * dis);
+    var x = train.position.x - (3.07693*2/3* dis);
     train.rotation.y = angle = 4.71237;
-    train.position.set(x, 5, 25);
+    train.position.set(x, 5, 50);
     time++;
   } else if (time <= 345 && time > 270 && turn == true) {
     train.position.set((radius * Math.cos(angle)) + 100, 5, -radius * Math.sin(angle));

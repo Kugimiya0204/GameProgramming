@@ -83,29 +83,29 @@ function animate() {
 
   //var dt = clock.getDelta();
   //if (turn) angle += 2 * 0.10472 * dt;
-  if (time <= 200 && turn == true) {
+  if (time <= 97 && turn == true) {
     var x = train.position.x + (0.5 * dis);
     train.rotation.y = angle = 1.57079;
-    train.position.set(x, 5, -25);
+    train.position.set(x, 5, -50);
     time++;
 
-  } else if (time <= 300 && time > 200 && turn == true) {
-    train.position.set((radius * Math.cos(angle)) - 50, 5, -radius * Math.sin(angle));
+  } else if (time <= 173 && time > 97 && turn == true) {
+    train.position.set((radius * Math.cos(angle)) - 100, 5, -radius * Math.sin(angle));
     train.rotation.y = angle;
     angle += 0.031415926;
     time++;
-  } else if (time <= 500 && time > 300 && turn == true) {
+  } else if (time <= 270 && time > 173 && turn == true) {
     var x = train.position.x - (0.5 * dis);
     train.rotation.y = angle = 4.71237;
     train.position.set(x, 5, 25);
     time++;
-  } else if (time <= 600 && time > 500 && turn == true) {
-    train.position.set((radius * Math.cos(angle)) + 50, 5, -radius * Math.sin(angle));
+  } else if (time <= 345 && time > 270 && turn == true) {
+    train.position.set((radius * Math.cos(angle)) + 100, 5, -radius * Math.sin(angle));
     train.rotation.y = angle;
     angle += 0.031415926;
     time++;
     console.log(angle);
-  } else if (time > 600 && turn == true) {
+  } else if (time > 345 && turn == true) {
     time = 0;
   }
 

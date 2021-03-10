@@ -92,7 +92,7 @@ function animate() {
   } else if (time <= 173 && time > 97 && turn == true) {
     train.position.set((radius * Math.cos(angle)) - 100, 5, -radius * Math.sin(angle));
     train.rotation.y = angle;
-    angle += 0.031415926;
+    angle += 0.031415926*4/3;
     time++;
   } else if (time <= 270 && time > 173 && turn == true) {
     var x = train.position.x - (0.5 * dis);
@@ -102,7 +102,7 @@ function animate() {
   } else if (time <= 345 && time > 270 && turn == true) {
     train.position.set((radius * Math.cos(angle)) + 100, 5, -radius * Math.sin(angle));
     train.rotation.y = angle;
-    angle += 0.031415926;
+    angle += 0.031415926*4/3;
     time++;
     console.log(angle);
   } else if (time > 345 && turn == true) {

@@ -24,7 +24,6 @@ body {
 <body> 
 <div id="info">Minecraft Steve
 <br>
-
 </div>
 <script src="https://threejs.org/build/three.min.js"></script>
 <script src="https://threejs.org/examples/js/controls/OrbitControls.js">
@@ -35,6 +34,18 @@ body {
 
 
 <script>
+var camera, scene, renderer, camera1;
+var car;
+var power, angle;
+var flag = 0,flagb = 0;
+var pos = new THREE.Vector3(0, 19.2, 0);
+var vel = new THREE.Vector3();
+var force = new THREE.Vector3();
+const WW = 12.4;
+const HH = 19.1;
+const DD = 6.2;
+const ww = 6.2;
+const hh = 19.1;
 var head, torso, lLeg, rLeg, lArm, rArm;
 var theta = 0;
 var walk = false;
@@ -771,7 +782,7 @@ function animate() {
 
   car.position.copy(pos);
 	car.rotation.y = angle + Math.PI / 2;
-switch (state) {
+/*switch (state) {
     case 'Stand':
       console.log('... in stand');
       intKey = keyframeStand(clock.getElapsedTime(), TStand);
@@ -788,7 +799,7 @@ switch (state) {
       console.log('... in walk');
       intKey = keyframeWalk(clock.getElapsedTime(), TWalk);
       break;
-  }
+  }*/
   
 }
 

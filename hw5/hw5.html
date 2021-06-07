@@ -51,6 +51,7 @@ function BuildAgent(){
   return;
 }
 var camera, scene, renderer;
+var agents=[];
 var agent;
 var radius;
 var pS = new THREE.Vector3(-50,-30,0);
@@ -263,7 +264,9 @@ function animate() {
   agent.update(dt);
   
   // portal
+  agents.forEach(function(agent){
 	if (agent.pos.x > 50) agent.pos.set(-50,-30,0);
+	});
   if(flag%100 == 0 && agents.length <= 30)
   	setTimeout(BuildAgent, 1000);
 		//clearInterval(BuildAgent);

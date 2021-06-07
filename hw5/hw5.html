@@ -73,7 +73,13 @@ class Agent {
     // for orientable agent
     this.angle = 0;
   }
+  distanceTo(otherAgent) {
+    return this.pos.distanceTo(otherAgent.pos)
+  }
   
+  addNbr(otherAgent) {
+    this.nbhd.push(otherAgent)
+  }
   update(dt) {
     this.accumulateForce();
     this.vel.add(this.force.clone().multiplyScalar(dt));
@@ -120,7 +126,19 @@ class Agent {
 		this.force.set (0,0,0);
     if (this.target)
 			this.force.add(this.targetInducedForce(this.target));
-		
+	let push = new THREE.Vector3()
+    for (let i = 0; i < this.nbhd.length; i++) {
+      let point = this.pos.clone().sub(this.nbhd[i].pos);
+      push.add(point.setLength(1 / point.length()))
+    }
+    this.force.add(push)
+	
+	
+    if(this.force.x<0)
+    	this.force.x = -this.force.x/10;
+    
+	
+	
     // path related (for simple straight line)
     let posF = agent.pos.clone().add (agent.vel);
     if(posF.x>-50&&posF.x<=-17){

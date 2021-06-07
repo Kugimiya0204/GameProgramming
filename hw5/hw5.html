@@ -52,7 +52,6 @@ function BuildAgent(){
 }
 var camera, scene, renderer;
 var agents=[];
-var agent;
 var radius;
 var pS = new THREE.Vector3(-50,-30,0);
 var pE = new THREE.Vector3(-17,0,0);
@@ -140,7 +139,7 @@ class Agent {
 	
 	
     // path related (for simple straight line)
-    let posF = agent.pos.clone().add (agent.vel);
+    let posF = this.pos.clone().add (this.vel);
     if(posF.x>-50&&posF.x<=-17){
     let pHat = pE.clone().sub(pS).normalize();
     let tmp = posF.clone().sub(pS);

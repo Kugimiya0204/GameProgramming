@@ -162,7 +162,7 @@ function init() {
   camera.position.y = 1;
   camera.position.z = 10;
 
-  let grid = new THREE.GridHelper(20,20,'red','white');
+  let grid = new THREE.GridHelper(10,10,'red','white');
   grid.rotation.x = -Math.PI/2
   scene.add (grid);
 
@@ -175,7 +175,7 @@ function init() {
   // pawn:
   RR = 0.2;  // pawn size
   pawn = new THREE.Mesh (new THREE.CircleGeometry(RR,20), 
-         new THREE.MeshBasicMaterial({color:'cyan'}));
+         new THREE.MeshBasicMaterial({color:'green'}));
   scene.add (pawn);
   
   pawn.position.set (2.1, 1.2);

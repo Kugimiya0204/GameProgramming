@@ -78,7 +78,7 @@ function make3JSLoop() {
   var geometry = new THREE.BufferGeometry();
   geometry.setFromPoints (points);
   var border = new THREE.Line(geometry, new THREE.LineBasicMaterial({
-    color: 0x0000ff
+    color:'green'
   }));
   scene.add(border);
 }
@@ -162,7 +162,7 @@ function init() {
   camera.position.y = 1;
   camera.position.z = 10;
 
-  let grid = new THREE.GridHelper(10,10,'red','white');
+  let grid = new THREE.GridHelper(20,20,'red','white');
   grid.rotation.x = -Math.PI/2
   scene.add (grid);
 
@@ -175,7 +175,7 @@ function init() {
   // pawn:
   RR = 0.2;  // pawn size
   pawn = new THREE.Mesh (new THREE.CircleGeometry(RR,20), 
-         new THREE.MeshBasicMaterial({color:'green'}));
+         new THREE.MeshBasicMaterial({color:'cyan'}));
   scene.add (pawn);
   
   pawn.position.set (2.1, 1.2);
